@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss" , $email, $senha);
 
     // Executa o query SQL no banco de dados
-    if ($stmt->execute()) 
+    if ($stmt->execute()) {
         // Envia o parâmetro "sucesso=1" na URL para mostrar mensagem no login
         header("Location: index.php?sucesso=1");
         exit; // Finaliza o script imediatamente após o redirecionamento
@@ -29,6 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Caso ocorra algum erro (ex: email duplicado), exibe o erro na tela
         echo "Erro ao cadastrar: " . $conn->error;
     }
-
+}
 ?>
  
