@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: index.php?sucesso=1");
         exit; // Finaliza o script imediatamente após o redirecionamento
     } else {
-        // Caso ocorra algum erro (ex: email duplicado), exibe o erro na tela
+        // Caso ocorra algum erro (ex: email duplicado), exibe os erros na tela
         echo "Erro ao cadastrar: " . $conn->error;
     }
 }
