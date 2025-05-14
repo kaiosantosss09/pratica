@@ -22,11 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Executa o query SQL no banco de dados
     if ($stmt->execute()) 
-       // Se o cadastro 
- 
-
-
-
-}
+        // Envia o parâmetro "sucesso=1" na URL para mostrar mensagem no login
+        header("Location: index.php?sucesso=1");
+        exit; // Finaliza o script imediatamente após o redirecionamento
+    } else {
+        // Caso ocorra algum erro (ex: email duplicado), exibe o erro na tela
+        echo "Erro ao cadastrar: " . $conn->error;
+    }
 
 ?>
+ 
