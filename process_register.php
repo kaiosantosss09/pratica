@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Substitui os parâmetros de query pelos valores reais de forma segura
     // "sss"  significa que estamos passando 3 strings (s = string)
-    $stmt->bind_param(types: "sss", var: $nome, vars: $email, $senha);
+    $stmt->bind_param("sss" , $email, $senha);
 
     // Executa o query SQL no banco de dados
     if ($stmt->execute()) 
